@@ -1,5 +1,5 @@
 function FooterSection() {
-  return <div>footer</div>;
+  return <footer className="font-ABeeZee">footer</footer>;
 }
 
 export default FooterSection;

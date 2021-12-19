@@ -1,11 +1,9 @@
 import Head from "next/head";
-import DashBoard from "./DashBoard";
-import FooterSection from "../Components/Footersection/FooterSection";
 import HeaderSection from "../Components/HeaderSection/HeaderSection";
 
-export default function Home() {
+function Tvshow() {
   return (
-    <div className="p-0 flex flex-col box-border m-0 ">
+    <div>
       <Head>
         <title>Movie Database</title>
         <link rel="icon" href="/movie .png" />
@@ -22,7 +20,13 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <DashBoard />
+      <section>
+        <main className="font-ABeeZee">
+          <h1>Tv Show</h1>
+        </main>
+      </section>
     </div>
   );
 }
+
+export default Tvshow;
