@@ -22,7 +22,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <header className=" py-4 font-Righteous shadow-xl border-b-4  sticky min-w-full w-fit">
+      <header className=" py-4 font-Righteous shadow-xl border-b-2  sticky min-w-full w-fit">
         <HeaderSection />
       </header>
       <main className="font-ABeeZee">
