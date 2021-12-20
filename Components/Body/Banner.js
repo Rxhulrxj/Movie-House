@@ -9,17 +9,22 @@ function Banner({ Upcoming }) {
   }, []);
   return (
     <div className="flex flex-col mt-4">
-      <div className=" relative xl:w-[200vh] w-96 h-[70vh] ml-4 ">
+      <div className=" relative xl:w-[200vh] w-96 h-[70vh] md:w-[95vh] ml-4 ">
         <Image
-          src={`${BASE_URL}.${movie.backdrop_path}`}
+          src={`${BASE_URL}${movie.backdrop_path}`}
           layout="fill"
           className="rounded-xl shadow-lg"
         />
       </div>
-      <div className="absolute top-2/3 right-12 left-7">
-        <h1 className="text-4xl text-emerald-500">{movie.title}</h1>
-        <p className="truncate md:text-clip">{movie.overview}</p>
-        <p>⭐{movie.vote_average}/10</p>
+      <div className="absolute top-2/3 right-12 left-7 cursor-default">
+        <h1 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
+          {movie.title}
+        </h1>
+        <p className="truncate md:text-clip text-red-600">{movie.overview}</p>
+        <p className="text-green-600">
+          ⭐{movie.vote_average}/10|
+          <span className="text-red-600">{movie.release_date}</span>
+        </p>
       </div>
     </div>
   );
