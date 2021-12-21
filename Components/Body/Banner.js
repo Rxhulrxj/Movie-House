@@ -9,7 +9,7 @@ function Banner({ Upcoming }) {
   }, []);
   return (
     <div className="flex flex-col mt-4">
-      <div className=" relative xl:w-[200vh] w-96 h-[70vh] md:w-[95vh] ml-4 ">
+      <div className=" relative xl:min-w-[200vh]  w-[100vh] h-[70vh] md:min-w-[100vh] lg:w-[160vh] ml-4 ">
         <Image
           src={`${BASE_URL}${movie.backdrop_path}`}
           layout="fill"

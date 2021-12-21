@@ -3,7 +3,11 @@ import Image from "next/image";
 function NowPlaying({ movie }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="flex min-w-[250px] min-h-[170px] md:min-w-[330px] md:min-h-[210px] rounded-lg overflow-hidden shadow-xl cursor-pointer border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 relative w-[300px] h-[170px] group hover:bg-gray-400">
+    <div
+      className="flex min-w-[250px] min-h-[250px] md:min-w-[330px] md:min-h-[310px] rounded-lg overflow-hidden shadow-xl cursor-pointer 
+    border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
+    relative w-[300px] h-[170px] group "
+    >
       <Image
         src={`${BASE_URL}${movie.backdrop_path}`}
         layout="fill"

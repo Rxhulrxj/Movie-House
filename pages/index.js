@@ -1,7 +1,11 @@
 import Head from "next/head";
 import DashBoard from "./DashBoard";
 
-export default function Home({ UpcomingMovies, NowPlayingMovies }) {
+export default function Home({
+  UpcomingMovies,
+  NowPlayingMovies,
+  PopularMovies,
+}) {
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
       <Head>
@@ -32,6 +36,7 @@ export default function Home({ UpcomingMovies, NowPlayingMovies }) {
         <DashBoard
           UpcomingMovies={UpcomingMovies}
           NowPlayingMovies={NowPlayingMovies}
+          PopularMovies={PopularMovies}
         />
       </main>
     </div>
@@ -45,15 +50,20 @@ export async function getServerSideProps(context) {
     fetch(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
+    fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`
+    ),
   ]);
-  const [upcoming, nowplaying] = await Promise.all([
+  const [upcoming, nowplaying, popular] = await Promise.all([
     request1.json(),
     request2.json(),
+    request3.json(),
   ]);
   return {
     props: {
       UpcomingMovies: upcoming.results,
       NowPlayingMovies: nowplaying.results,
+      PopularMovies: popular.results,
     },
   };
 }

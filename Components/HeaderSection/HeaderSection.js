@@ -28,7 +28,7 @@ function HeaderSection() {
     }
   };
   return (
-    <header className="py-4 font-Righteous shadow-xl border-b-2  sticky min-w-full w-fit">
+    <header className="py-4 font-Righteous shadow-xl border-b-2  sticky min-w-[105vh] lg:min-w-[170vh] xl:min-w-[203vh] w-fit">
       <div className="flex flex-1 space-x-3 space-y-5 sm:ml-2 md:ml-6 xl:ml-20 items-center ">
         <h1 className=" mt-4  text-red-600 animate-pulse cursor-default sm:text-3xl md:text-4xl xl:text-5xl mr-5">
           Movie<span className="ml-1 text-cyan-500">Data</span>base
