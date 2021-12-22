@@ -16,7 +16,7 @@ function NowPlaying({ movie }) {
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-16 group-hover:ml-8 group-hover:bg-zinc-200/20">
         <h2 className="text-black font-extrabold text-xl">
-          {movie.original_title}
+          {movie.original_title || movie.title}
         </h2>
         <br />
         <p className="text-black">⭐{movie.vote_average}/10</p>

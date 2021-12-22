@@ -18,7 +18,7 @@ function Banner({ Upcoming }) {
       </div>
       <div className="absolute top-2/3 right-12 left-7 cursor-default">
         <h1 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
-          {movie.title}
+          {movie.original_title || movie.title}
         </h1>
         <p className="truncate md:text-clip text-red-600">{movie.overview}</p>
         <p className="text-green-600">

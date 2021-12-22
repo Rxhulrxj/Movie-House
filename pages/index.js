@@ -5,6 +5,7 @@ export default function Home({
   UpcomingMovies,
   NowPlayingMovies,
   PopularMovies,
+  TopRatedMovies,
 }) {
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
@@ -37,13 +38,14 @@ export default function Home({
           UpcomingMovies={UpcomingMovies}
           NowPlayingMovies={NowPlayingMovies}
           PopularMovies={PopularMovies}
+          TopRatedMovies={TopRatedMovies}
         />
       </main>
     </div>
   );
 }
 export async function getServerSideProps(context) {
-  const [request1, request2, request3] = await Promise.all([
+  const [request1, request2, request3, request4] = await Promise.all([
     fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
@@ -53,17 +55,22 @@ export async function getServerSideProps(context) {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
+    fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`
+    ),
   ]);
-  const [upcoming, nowplaying, popular] = await Promise.all([
+  const [upcoming, nowplaying, popular, top_rated] = await Promise.all([
     request1.json(),
     request2.json(),
     request3.json(),
+    request4.json(),
   ]);
   return {
     props: {
       UpcomingMovies: upcoming.results,
       NowPlayingMovies: nowplaying.results,
       PopularMovies: popular.results,
+      TopRatedMovies: top_rated.results,
     },
   };
 }
