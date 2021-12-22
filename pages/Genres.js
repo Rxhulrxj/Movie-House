@@ -4,7 +4,7 @@ function Genres() {
   return (
     <div>
       <Head>
-        <title>Movie Database</title>
+        <title>Movie House</title>
         <link rel="icon" href="/movie .png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

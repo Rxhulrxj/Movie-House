@@ -6,7 +6,7 @@ function DetailView({ result }) {
   return (
     <div className="relative ">
       <Head>
-        <title>Movie Database</title>
+        <title>Movie House</title>
         <link rel="icon" href="/movie .png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -29,15 +29,20 @@ function DetailView({ result }) {
           rel="stylesheet"
         />
       </Head>
-      <section className="relative z-50 font-ABeeZee">
-        <div className="relative min-h-[150vh] min-w-[110vh] md:min-h-[90vh] lg:min-w-[220vh] xl:min-w-[90vh]">
+      <section className=" relative flex flex-col x z-50 font-ABeeZee">
+        <div className="relative min-h-[80vh] min-w-[110vh] md:min-h-[90vh] lg:min-w-[140vw] xl:min-w-[70vh] mt-1 ">
           <Image
-            src={`${BASE_URL}${result.backdrop_path}`}
+            src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
             layout="fill"
             objectFit="cover"
+            className="rounded-xl shadow-lg"
           />
         </div>
-        <div className="absolute inset-y-1/2  md:inset-y-1/2 md:bottom-10 inset-x-4 md:inset-12 space-y-6 z-50 bg-slate-300/20 rounded-xl text-white shadow-lg cursor-default">
+        <div className="md:absolute flex flex-col text-center -mr-80 md:top-[85%] md:left-1/3 md:right-1/3 lg:-mr-96  xl:-mr-0 xl:top-[85%] xl:left-1/3 xl:right-1/3  space-y-6 ">
+          <h2 className="text-3xl font-bold">{result.title}</h2>
+          <p>{result.tagline}</p>
+        </div>
+        {/* <div className="absolute  md:bottom-10 inset-x-4 md:inset-12 space-y-6 z-50 bg-slate-300/20 rounded-xl text-white shadow-lg cursor-default">
           <h2 className="text-3xl font-bold">{result.title}</h2>
           <button className="flex bg-white/70 text-black rounded-lg px-5 py-2 items-center space-x-3 hover:scale-105 transition transform duration-150">
             <img
@@ -54,9 +59,15 @@ function DetailView({ result }) {
             Release Date:{" "}
             <span title="Release Date">{result.release_date}</span>
           </p>
-        </div>
+        </div> */}
       </section>
       <section>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
         <div>hello</div>
       </section>
     </div>

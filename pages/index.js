@@ -10,7 +10,7 @@ export default function Home({
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
       <Head>
-        <title>Movie Database</title>
+        <title>Movie House</title>
         <link rel="icon" href="/movie .png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

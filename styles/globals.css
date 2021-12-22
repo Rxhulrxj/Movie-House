@@ -25,3 +25,14 @@
     @apply bg-slate-100 text-slate-800 dark:bg-[#191919] dark:text-gray-300;
   }
 }
+.parallax {
+  background-color: wheat;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mid-parallax {
+  min-height: 80vh;
+}

@@ -28,10 +28,10 @@ function HeaderSection() {
     }
   };
   return (
-    <header className="py-4 font-Righteous shadow-xl border-b-2  sticky min-w-[110vh] lg:min-w-[220vh] xl:min-w-[203vh] w-fit">
-      <div className="flex flex-1 space-x-3 space-y-5 sm:ml-2 md:ml-6 xl:ml-20 items-center ">
+    <header className="py-4 font-Righteous shadow-xl border-b-2 min-w-[110vh] md:min-w-[146vw] lg:min-w-[138vw] xl:min-w-[203vh] w-fit">
+      <div className="flex  space-x-3 space-y-5 sm:ml-2 md:ml-6 xl:ml-20 items-center ">
         <h1 className=" mt-4  text-red-600 animate-pulse cursor-default sm:text-3xl md:text-4xl xl:text-5xl mr-5">
-          Movie<span className="ml-1 text-cyan-500">Data</span>base
+          Movie<span className="ml-1 text-cyan-500">House</span>
         </h1>
         <div className="flex flex-row items-center space-x-5 ml-10 mt-8 flex-grow">
           <Link href="/">
@@ -61,13 +61,15 @@ function HeaderSection() {
               </h2>
             </a>
           </Link>
-        </div>
-        <div className="flex flex-col-reverse ml-10 mr-10 shadow-xl invisible md:visible">
-          <input
-            type="text"
-            className="bg-transparent  outline-double rounded-lg w-full p-0 py-2 px-3 focus:outline-double focus:rounded-lg "
-            placeholder="Search here.."
-          />
+          <Link href="/Search">
+            <a className="no-underline">
+              <h2 className="leading-tight ml-4">
+                <span className="link link-underline link-underline-black">
+                  Search
+                </span>
+              </h2>
+            </a>
+          </Link>
         </div>
         <div className="flex items-center mr-6">{ThemeChanger()}</div>
       </div>
