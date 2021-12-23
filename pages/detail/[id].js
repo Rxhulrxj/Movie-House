@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-function DetailView({ result }) {
+function DetailView({ result, result2 }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
@@ -14,6 +14,9 @@ function DetailView({ result }) {
   const hours = Math.floor(result.runtime / 60);
   const minutes = result.runtime % 60;
   const runtime = `${hours}h ${minutes}m`;
+  const genres = result.genres;
+  const companies = result.production_companies;
+  const direc = result2.cast;
   return (
     <div className="relative">
       <Head>
@@ -56,26 +59,8 @@ function DetailView({ result }) {
             </h2>
             <p className=" ml-16 -mr-20 xl:ml-0 xl:-mr-0">{result.tagline}</p>
           </div>
-          {/* <div className="absolute  md:bottom-10 inset-x-4 md:inset-12 space-y-6 z-50 bg-slate-300/20 rounded-xl text-white shadow-lg cursor-default">
-          <h2 className="text-3xl font-bold">{result.title}</h2>
-          <button className="flex bg-white/70 text-black rounded-lg px-5 py-2 items-center space-x-3 hover:scale-105 transition transform duration-150">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/0/375.png"
-              className="w-7"
-            />
-            <span>Play Trailer</span>
-          </button>
-          <p className="font-bold">{result.overview}</p>
-          <p>
-            Imdb Rating: <span title="Rating">⭐{result.vote_average}/10</span>
-          </p>
-          <p>
-            Release Date:{" "}
-            <span title="Release Date">{result.release_date}</span>
-          </p>
-        </div> */}
         </section>
-        <section className="flex flex-col items-center ml-16">
+        <section className="flex flex-col  ml-16 items-center">
           <div className="flex items-center text-center -mr-72  mt-9  xl:-mr-0">
             <p className="font-bold text-center ">{result.overview}</p>
           </div>
@@ -87,9 +72,9 @@ function DetailView({ result }) {
               <iframe
                 width="580"
                 height="380"
-                src={`https://www.youtube.com/embed/${result.videos?.results[index]?.key}?controls=1`}
+                src={`https://www.youtube-nocookie.com/embed/${result.videos?.results[index]?.key}?controls=1`}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope ; picture-in-picture; fullscreen"
                 allowFullScreen
                 className=" ml-72 md:ml-96 xl:ml-0 xl:-mr-0"
@@ -125,7 +110,7 @@ function DetailView({ result }) {
                 </p>
               </div>
               <div className="flex flex-col border rounded-xl bg-slate-400 shadow-xl px-10 py-10 mb-10 md:mb-0">
-                <h3 className="text-3xl xl:text-5xl text-center">💰</h3>
+                <h3 className="text-3xl xl:text-5xl text-center">📅</h3>
                 <h5 className="text-center mt-2">Release Date</h5>
                 <p className=" mt-2 text-center font-semibold">
                   {result.release_date}
@@ -133,8 +118,45 @@ function DetailView({ result }) {
               </div>
             </div>
           </div>
-          <div>hello</div>
-          <div>hello</div>
+          <div className="grid grid-rows-3 lg:grid-cols-3 gap-x-10 items-center">
+            <div className="ml-80 md:ml-0  mt-28 text-center lg:ml-20 xl:ml-0 lg:-mr-[300px] xl:mr-64">
+              <h3 className="text-3xl font-bold underline">Genres</h3>
+              {genres && genres.length > 0
+                ? genres.map((genre) => (
+                    <p key={genre.name} className="text-2xl mb-3 font-semibold">
+                      {genre.name}
+                    </p>
+                  ))
+                : null}
+            </div>
+            <div className="ml-80 md:ml-20 md:mt-[90px] mt-16 text-center lg:-mr-[250px] xl:mr-56">
+              <h3 className="text-3xl font-bold underline">
+                Production companies
+              </h3>
+              {companies && companies.length > 0
+                ? companies.map((company) => (
+                    <p
+                      key={company.name}
+                      className="text-2xl mb-1 font-semibold"
+                    >
+                      {company.name}
+                    </p>
+                  ))
+                : null}
+            </div>
+            <div className="md:ml-20 md:mt-[55px] mt-28 text-center ml-80 items-center lg:-mr-[95px] lg:ml-56 xl:mr-20">
+              <h3 className="text-3xl font-bold underline">Website</h3>
+              <a
+                href={result.homepage}
+                className="text-2xl mb-1 font-semibold hover:underline hover:text-blue-500"
+              >
+                {result.title}
+              </a>
+            </div>
+          </div>
+          <div className="flex lg:mt-[-400px] text-center">
+            <h3 className="text-5xl underline">Cast</h3>
+          </div>
           <div>hello</div>
           <div>hello</div>
           <div>hello</div>
@@ -148,12 +170,22 @@ export default DetailView;
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const request = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
-  ).then((res) => res.json());
+  const [request1, request2] = await Promise.all([
+    fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
+    ),
+    fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.API_KEY}&language=en-US`
+    ),
+  ]);
+  const [result1, result2] = await Promise.all([
+    request1.json(),
+    request2.json(),
+  ]);
   return {
     props: {
-      result: request,
+      result: result1,
+      result2: result2,
     },
   };
 }
