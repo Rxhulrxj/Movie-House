@@ -14,19 +14,19 @@ export default function DashBoard({
     <div className="font-ABeeZee ">
       <Banner Upcoming={result} key={UpcomingMovies.id} />
       <h2 className="text-4xl ml-7 mt-8">Now Playing</h2>
-      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[100vh] lg:min-w-[160vh] xl:min-w-[201vh]">
+      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
         {NowPlayingMovies?.map((movie) => (
           <NowPlaying key={movie.id} movie={movie} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Popular Movies</h2>
-      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[100vh] lg:min-w-[160vh] xl:min-w-[201vh]">
+      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
         {PopularMovies?.map((movie) => (
           <PopularMovie key={movie.id} movie={movie} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Top-Rated Movies</h2>
-      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[100vh] lg:min-w-[160vh] xl:min-w-[201vh]">
+      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
         {TopRatedMovies?.map((movie) => (
           <TopRatedMovie key={movie.id} movie={movie} />
         ))}

@@ -17,12 +17,12 @@ relative  group "
         objectFit="cover"
         className="rounded-xl shadow-lg"
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-16 group-hover:ml-7 group-hover:bg-slate-500/20">
-        <h2 className="text-black font-extrabold text-xl">
+      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[100px] group-hover:ml-0 group-hover:bg-slate-900 w-[100%]">
+        <h2 className="text-white font-extrabold text-xl">
           {movie.original_title || movie.title}
         </h2>
         <br />
-        <p className="text-black">⭐{movie.vote_average}/10</p>
+        <p className="text-white">⭐{movie.vote_average}/10</p>
       </div>
     </div>
   );

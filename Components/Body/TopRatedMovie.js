@@ -19,10 +19,10 @@ relative  group "
         objectFit="contain"
         className="rounded-xl shadow-lg"
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-40 group-hover:ml-4 group-hover:bg-slate-500/20">
-        <h2 className="text-red-600 font-extrabold text-xl">{movie.title}</h2>
+      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-40 group-hover:ml-0 group-hover:bg-slate-900 w-full">
+        <h2 className="text-white font-extrabold text-xl">{movie.title}</h2>
         <br />
-        <p className="text-red-600">⭐{movie.vote_average}/10</p>
+        <p className="text-white">⭐{movie.vote_average}/10</p>
       </div>
     </div>
   );
