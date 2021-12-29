@@ -6,18 +6,18 @@ function PopularMovie({ movie }) {
   const router = useRouter();
   return (
     <div
-      className="flex min-w-[250px] min-h-[170px] md:min-w-[330px] md:min-h-[210px]  rounded-lg overflow-hidden shadow-xl cursor-pointer 
+      className="flex min-w-[250px] min-h-[170px] md:min-w-[250px] md:min-h-[250px]  rounded-lg overflow-hidden shadow-xl cursor-pointer 
 border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
 relative  group "
       onClick={() => router.push(`/detail/${movie.id}`)}
     >
       <Image
-        src={`${BASE_URL}${movie.backdrop_path}`}
+        src={`${BASE_URL}${movie.poster_path}`}
         layout="fill"
-        objectFit="cover"
+        objectFit="inherit"
         className="rounded-xl shadow-lg"
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[100px] group-hover:ml-0 group-hover:bg-slate-900 w-[100%]">
+      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[130px] group-hover:ml-0 group-hover:bg-slate-900 w-[100%] transform transition duration-300">
         <h2 className="text-white font-extrabold text-xl">
           {movie.original_title || movie.title}
         </h2>

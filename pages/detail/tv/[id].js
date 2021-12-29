@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import RecommendMovie from "../../Components/Body/RecommendMovie";
-import SimilarMovie from "../../Components/Body/SimilarMovie";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
@@ -55,7 +53,7 @@ function Detail({ result, result2, similar, recommed }) {
             />
           </div>
           <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
-            <h2 className="text-5xl font-bold">{result.title}</h2>
+            <h2 className="text-5xl font-bold">{result.name}</h2>
             <p className="text-3xl">{result.tagline}</p>
           </div>
         </section>
@@ -66,6 +64,12 @@ function Detail({ result, result2, similar, recommed }) {
           <div className="mt-5">
             <p className="text-center font-bold text-4xl text-green-700">
               Status: {result.status}
+            </p>
+            <p className="text-center font-bold text-4xl text-green-700">
+              Episodes Released: {result.number_of_episodes}
+            </p>
+            <p className="text-center font-bold text-4xl text-green-700">
+              Total Season: {result.number_of_seasons}
             </p>
           </div>
           <div className="text-center">
@@ -196,12 +200,12 @@ function Detail({ result, result2, similar, recommed }) {
                 href={result.homepage}
                 className="text-2xl font-semibold hover:underline hover:text-blue-500"
               >
-                {result.title}
+                {result.name}
               </a>
             </div>
           </div>
         </section>
-        <section>
+        {/* <section>
           <h2 className="text-4xl ml-7 mt-8 underline">Recommended Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
             {recommed?.map((movie) => (
@@ -214,7 +218,7 @@ function Detail({ result, result2, similar, recommed }) {
               <SimilarMovie key={movie.id} movie={movie} />
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
@@ -225,16 +229,16 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
   const [request1, request2, request3, request4] = await Promise.all([
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
     ),
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${process.env.API_KEY}&language=en-US`
     ),
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
   ]);
   const [result1, result2, result3, result4] = await Promise.all([

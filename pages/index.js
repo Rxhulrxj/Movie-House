@@ -44,7 +44,7 @@ export default function Home({
     </div>
   );
 }
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const [request1, request2, request3, request4] = await Promise.all([
     fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`

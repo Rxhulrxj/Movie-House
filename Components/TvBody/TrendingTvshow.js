@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function NowPlaying({ movie }) {
+function Trendingtv({ tv }) {
   const router = useRouter();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
@@ -9,23 +9,23 @@ function NowPlaying({ movie }) {
       className="flex min-w-[250px] min-h-[250px] md:min-w-[330px] md:min-h-[310px] rounded-lg overflow-hidden shadow-xl cursor-pointer 
     border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
     relative w-[300px] h-[170px] group "
-      onClick={() => router.push(`/detail/${movie.id}`)}
+      onClick={() => router.push(`/detail/tv/${tv.id}`)}
     >
       <Image
-        src={`${BASE_URL}${movie.poster_path}`}
+        src={`${BASE_URL}${tv.poster_path}`}
         layout="fill"
-        objectFit="inherit"
+        objectFit="conatin"
         className="rounded-xl shadow-lg"
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[225px] group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">
         <h2 className="text-white font-extrabold text-xl">
-          {movie.original_title || movie.title}
+          {tv.name || tv.original_name}
         </h2>
         <br />
-        <p className="text-white">⭐{movie.vote_average}/10</p>
+        <p className="text-white">⭐{tv.vote_average}/10</p>
       </div>
     </div>
   );
 }
 
-export default NowPlaying;
+export default Trendingtv;
