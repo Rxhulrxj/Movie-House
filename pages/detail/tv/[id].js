@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import RecommendTv from "../../../Components/TvBody/RecommendTv";
+import SimilarTv from "../../../Components/TvBody/SimilarTv";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
@@ -116,7 +118,7 @@ function Detail({ result, result2, similar, recommed }) {
               </h3>
               <h5 className="text-center mt-2 text-black">Budget</h5>
               <p className=" mt-2 text-center text-black font-semibold">
-                {formatter.format(`${result.budget}`)}
+                Not Provided
               </p>
             </div>
             <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">
@@ -128,23 +130,10 @@ function Detail({ result, result2, similar, recommed }) {
                   style={{ width: "70px", height: "60px" }}
                 ></lord-icon>
               </h3>
-              <h5 className="text-center mt-2 text-black">Runtime</h5>
-              <p className=" mt-2 text-center font-semibold text-black">
-                {runtime}
-              </p>
-            </div>
-            <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">
-              <h3 className="text-3xl xl:text-5xl text-center mt-5">
-                <lord-icon
-                  src="https://cdn.lordicon.com/yeallgsa.json"
-                  trigger="morph"
-                  colors="primary:#121331,secondary:#08a88a"
-                  style={{ width: "70px", height: "60px" }}
-                ></lord-icon>
-              </h3>
-              <h5 className="text-center mt-2 text-black">Revenue</h5>
-              <p className=" mt-2 text-center font-semibold text-black">
-                {formatter.format(`${result.revenue}`)}
+              <h5 className="text-center mt-2 text-black">Episode Runtime</h5>
+              <p className=" mt-2 text-center font-semibold text-black ">
+                {result.episode_run_time[0]}
+                <span className="ml-2">Minutes</span>
               </p>
             </div>
             <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">
@@ -156,9 +145,27 @@ function Detail({ result, result2, similar, recommed }) {
                   style={{ width: "70px", height: "60px" }}
                 ></lord-icon>
               </h3>
-              <h5 className="text-center mt-2 text-black">Release Date</h5>
-              <p className=" mt-2 text-center font-semibold text-black">
-                {result.release_date}
+              <h5 className="text-center  text-black">
+                First Episode Released Date
+              </h5>
+              <p className=" text-center font-semibold text-black">
+                {result.first_air_date}
+              </p>
+            </div>
+            <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">
+              <h3 className="text-3xl xl:text-5xl text-center mt-5">
+                <lord-icon
+                  src="https://cdn.lordicon.com/gqzfzudq.json"
+                  trigger="morph"
+                  colors="primary:#121331,secondary:#08a88a"
+                  style={{ width: "70px", height: "60px" }}
+                ></lord-icon>
+              </h3>
+              <h5 className="text-center  text-black">
+                Last Episode Released Date
+              </h5>
+              <p className=" text-center font-semibold text-black">
+                {result.last_air_date}
               </p>
             </div>
           </div>
@@ -205,20 +212,20 @@ function Detail({ result, result2, similar, recommed }) {
             </div>
           </div>
         </section>
-        {/* <section>
+        <section>
           <h2 className="text-4xl ml-7 mt-8 underline">Recommended Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-            {recommed?.map((movie) => (
-              <RecommendMovie key={movie.id} movie={movie} />
+            {recommed?.map((tv) => (
+              <RecommendTv key={tv.id} tv={tv} />
             ))}
           </div>
           <h2 className="text-4xl ml-7 mt-8 underline">Similar Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-            {similar?.map((movie) => (
-              <SimilarMovie key={movie.id} movie={movie} />
+            {similar?.map((tv) => (
+              <SimilarTv key={tv.id} tv={tv} />
             ))}
           </div>
-        </section> */}
+        </section>
       </main>
     </div>
   );

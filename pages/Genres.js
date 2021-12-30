@@ -1,6 +1,8 @@
 import Head from "next/head";
+import MovieGenre from "../Components/MovieGenre";
+import TvGenre from "../Components/TvGenre";
 
-function Genres() {
+function Genres({ genres, tvgenres }) {
   return (
     <div>
       <Head>
@@ -21,7 +23,30 @@ function Genres() {
       </Head>
       <section>
         <main className="font-ABeeZee">
-          <h1>Genres</h1>
+          <section className="">
+            <div>
+              <h2 className="text-5xl text-center mt-7 my-8 underline cursor-default font-bold text-black dark:text-stone-200">
+                Movie Genres
+              </h2>
+              <div className="grid grid-cols-2 justify-center w-[90%] extrasmall:mx-[70%] lg:ml-[50%] xl:ml-[7%] mx-14 gap-x-72">
+                {genres?.map((genre) => (
+                  <MovieGenre key={genre.id} genre={genre} />
+                ))}
+              </div>
+            </div>
+          </section>
+          <section className="">
+            <div>
+              <h2 className="text-5xl text-center mt-7 my-8 underline cursor-default font-bold text-black dark:text-stone-200">
+                Tv Genres
+              </h2>
+              <div className="grid grid-cols-2 justify-center w-[90%] extrasmall:mx-[70%] lg:ml-[50%] xl:ml-[7%] mx-14 gap-x-72">
+                {tvgenres?.map((genre) => (
+                  <TvGenre key={genre.id} genre={genre} />
+                ))}
+              </div>
+            </div>
+          </section>
         </main>
       </section>
     </div>
@@ -29,3 +54,23 @@ function Genres() {
 }
 
 export default Genres;
+export async function getServerSideProps() {
+  const [request1, request2] = await Promise.all([
+    fetch(
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en-US`
+    ),
+    fetch(
+      `https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.API_KEY}&language=en-US`
+    ),
+  ]);
+  const [result1, result2] = await Promise.all([
+    request1.json(),
+    request2.json(),
+  ]);
+  return {
+    props: {
+      genres: result1.genres,
+      tvgenres: result2.genres,
+    },
+  };
+}
