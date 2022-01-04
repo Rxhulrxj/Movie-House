@@ -17,11 +17,12 @@ function Banner({ Upcoming }) {
       <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw] md:w-[90vw] lg:w-[90vw] ml-4 ">
         <Image
           src={
-            `${BASEURL}${movie.backdrop_path || movie.poster_path}` ||
+            `${BASEURL}${movie?.backdrop_path || movie.poster_path}` ||
             `${BASEURL}${movie.poster_path}`
           }
           layout="fill"
           className="rounded-xl shadow-lg"
+          priority={true}
         />
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">

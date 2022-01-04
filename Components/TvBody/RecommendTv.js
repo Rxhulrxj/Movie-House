@@ -18,6 +18,7 @@ function RecommendTv({ tv }) {
         height={400}
         objectFit="contain"
         className="rounded-xl shadow-lg"
+        priority={true}
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-40 group-hover:ml-0 group-hover:bg-slate-900 w-full">
         <h2 className="text-white font-extrabold text-xl">{tv.name}</h2>

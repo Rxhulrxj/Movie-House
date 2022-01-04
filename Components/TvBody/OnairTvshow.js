@@ -15,6 +15,7 @@ function OnairTvshowS({ tv }) {
         layout="fill"
         objectFit="conatin"
         className="rounded-xl shadow-lg"
+        priority={true}
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-32 group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">
         <h2 className="text-white font-extrabold text-xl">

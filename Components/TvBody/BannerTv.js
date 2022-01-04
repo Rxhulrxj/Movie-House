@@ -17,11 +17,12 @@ function BannerTv({ Popular }) {
       <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw] md:w-[90vw] lg:w-[90vw] ml-4 ">
         <Image
           src={
-            `${BASEURL}${tvshow.backdrop_path || tvshow.poster_path}` ||
+            `${BASEURL}${tvshow?.backdrop_path || tvshow.poster_path}` ||
             `${BASEURL}${tvshow.poster_path}`
           }
           layout="fill"
           className="rounded-xl shadow-lg"
+          priority={true}
         />
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">

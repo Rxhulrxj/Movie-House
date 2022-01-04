@@ -16,6 +16,7 @@ relative  group "
         layout="fill"
         objectFit="inherit"
         className="rounded-xl shadow-lg"
+        priority={true}
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[130px] group-hover:ml-0 group-hover:bg-slate-900 w-[100%] transform transition duration-300">
         <h2 className="text-white font-extrabold text-xl">

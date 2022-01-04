@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function TvGenreshow({ result }) {
+function TvDetail({ result }) {
   const router = useRouter();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
@@ -22,4 +22,4 @@ function TvGenreshow({ result }) {
   );
 }
 
-export default TvGenreshow;
+export default TvDetail;
