@@ -7,7 +7,7 @@ function MovieGenreShow({ result }) {
   return (
     <div className="mx-10 my-8  justify-center items-end columns-auto">
       <div
-        className="relative xl:w-[25rem] h-[23rem] extrasmall:w-[35rem] extrasmall:h-[35rem] shadow-lg hover:scale-110 transition transform duration-300 ease-in-out hover:shadow-2xl"
+        className="relative xl:w-[25rem] h-[23rem] extrasmall:w-[35rem] extrasmall:h-[35rem] shadow-lg hover:scale-110 transition transform duration-300 ease-in-out hover:shadow-2xl cursor-pointer"
         onClick={() => router.push(`/detail/${result.id}`)}
       >
         <Image

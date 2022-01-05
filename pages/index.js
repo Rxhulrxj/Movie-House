@@ -6,6 +6,12 @@ export default function Home({
   NowPlayingMovies,
   PopularMovies,
   TopRatedMovies,
+  trendingdaily,
+  action,
+  comedy,
+  romance,
+  horror,
+  documentary,
 }) {
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
@@ -35,17 +41,37 @@ export default function Home({
       </Head>
       <main>
         <DashBoard
+          trendingdaily={trendingdaily}
           UpcomingMovies={UpcomingMovies}
           NowPlayingMovies={NowPlayingMovies}
           PopularMovies={PopularMovies}
           TopRatedMovies={TopRatedMovies}
+          action={action}
+          comedy={comedy}
+          romance={romance}
+          horror={horror}
+          documentary={documentary}
         />
       </main>
     </div>
   );
 }
 export async function getServerSideProps() {
-  const [request1, request2, request3, request4] = await Promise.all([
+  const [
+    request1,
+    request2,
+    request3,
+    request4,
+    request5,
+    request6,
+    request7,
+    request8,
+    request9,
+    request10,
+  ] = await Promise.all([
+    fetch(
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.API_KEY}`
+    ),
     fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
@@ -58,19 +84,56 @@ export async function getServerSideProps() {
     fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`
     ),
+    fetch(`
+        https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=28`),
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=35`
+    ),
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=10749`
+    ),
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=27`
+    ),
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=99&include_adult=false`
+    ),
   ]);
-  const [upcoming, nowplaying, popular, top_rated] = await Promise.all([
+  const [
+    banner,
+    upcoming,
+    nowplaying,
+    popular,
+    top_rated,
+    action,
+    comedy,
+    romance,
+    horror,
+    documentary,
+  ] = await Promise.all([
     request1.json(),
     request2.json(),
     request3.json(),
     request4.json(),
+    request5.json(),
+    request6.json(),
+    request7.json(),
+    request8.json(),
+    request9.json(),
+    request10.json(),
   ]);
   return {
     props: {
+      trendingdaily: banner.results,
       UpcomingMovies: upcoming.results,
       NowPlayingMovies: nowplaying.results,
       PopularMovies: popular.results,
       TopRatedMovies: top_rated.results,
+      action: action.results,
+      comedy: comedy.results,
+      romance: romance.results,
+      horror: horror.results,
+      documentary: documentary.results,
     },
   };
 }

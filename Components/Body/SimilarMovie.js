@@ -19,11 +19,6 @@ relative  group "
         className="rounded-xl shadow-lg"
         priority={true}
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-40 group-hover:ml-0 group-hover:bg-slate-900 w-full">
-        <h2 className="text-white font-extrabold text-xl">{movie.title}</h2>
-        <br />
-        <p className="text-white">⭐{movie.vote_average.toFixed(1)}/10</p>
-      </div>
     </div>
   );
 }

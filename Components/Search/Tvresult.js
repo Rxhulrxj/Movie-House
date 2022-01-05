@@ -1,4 +1,3 @@
-import SearchDetailtv from "./SearchDetailTv";
 import TvDetail from "./TvDetail";
 
 function Tvresult({ movies }) {

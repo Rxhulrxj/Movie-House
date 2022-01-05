@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Searchinput from "../../Components/Search/Searchinput";
-import Searchresulttv from "../../Components/Search/SearchResultTv";
 import Tvresult from "../../Components/Search/Tvresult";
 import Search from "../Search";
 

@@ -6,7 +6,7 @@ function PopularMovie({ movie }) {
   const router = useRouter();
   return (
     <div
-      className="flex min-w-[250px] min-h-[170px] md:min-w-[250px] md:min-h-[250px]  rounded-lg overflow-hidden shadow-xl cursor-pointer 
+      className="flex min-w-[140px] min-h-[170px] md:min-w-[220px] md:min-h-[290px]  rounded-lg overflow-hidden shadow-xl cursor-pointer 
 border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
 relative  group "
       onClick={() => router.push(`/detail/${movie.id}`)}
@@ -14,7 +14,7 @@ relative  group "
       <Image
         src={`${BASE_URL}${movie.poster_path}`}
         layout="fill"
-        objectFit="inherit"
+        objectFit="contain"
         className="rounded-xl shadow-lg"
         priority={true}
       />

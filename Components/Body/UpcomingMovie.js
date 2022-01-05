@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function NowPlaying({ movie }) {
-  const router = useRouter();
+function UpcomingMovie({ movie }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const router = useRouter();
   return (
     <div
-      className="flex min-w-[180px] min-h-[270px] md:min-w-[220px] md:min-h-[340px] rounded-lg overflow-hidden shadow-xl cursor-pointer 
-    border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
-    relative w-[300px] h-[170px] group "
+      className="flex min-w-[160px] min-h-[250px] md:min-w-[200px] md:min-h-[270px]  rounded-lg overflow-hidden shadow-xl cursor-pointer 
+border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
+relative  group "
       onClick={() => router.push(`/detail/${movie.id}`)}
     >
       <Image
@@ -18,7 +18,7 @@ function NowPlaying({ movie }) {
         className="rounded-xl shadow-lg"
         priority={true}
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[225px] group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">
+      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[130px] group-hover:ml-0 group-hover:bg-slate-900 w-[100%] transform transition duration-300">
         <h2 className="text-white font-extrabold text-xl">
           {movie.original_title || movie.title}
         </h2>
@@ -28,5 +28,4 @@ function NowPlaying({ movie }) {
     </div>
   );
 }
-
-export default NowPlaying;
+export default UpcomingMovie;

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-function BannerTv({ Popular }) {
+function BannerTv({ Banner }) {
   const BASEURL = "https://image.tmdb.org/t/p/original/";
   const [tvshow, setTvshow] = useState(" ");
   const router = useRouter();
   useEffect(() => {
-    setTvshow(Popular[Math.floor(Math.random() * Popular.length - 1)]);
-    return Popular;
+    setTvshow(Banner[Math.floor(Math.random() * Banner.length - 1)]);
+    return Banner;
   }, []);
   return (
     <div
@@ -17,8 +17,8 @@ function BannerTv({ Popular }) {
       <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw] md:w-[90vw] lg:w-[90vw] ml-4 ">
         <Image
           src={
-            `${BASEURL}${tvshow?.backdrop_path || tvshow.poster_path}` ||
-            `${BASEURL}${tvshow.poster_path}`
+            `${BASEURL}${tvshow?.backdrop_path || tvshow?.poster_path}` ||
+            `${BASEURL}${tvshow?.poster_path}`
           }
           layout="fill"
           className="rounded-xl shadow-lg"

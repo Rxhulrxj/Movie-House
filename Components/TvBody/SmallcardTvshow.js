@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-function OnairTvshowS({ tv }) {
+function SmallcardTvshows({ tv }) {
   const router = useRouter();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
@@ -28,4 +28,4 @@ function OnairTvshowS({ tv }) {
   );
 }
 
-export default OnairTvshowS;
+export default SmallcardTvshows;

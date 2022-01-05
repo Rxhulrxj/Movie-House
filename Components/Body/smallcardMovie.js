@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function TopRatedMovie({ movie }) {
+function SmallcardMovie({ movie }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
   return (
@@ -29,4 +29,4 @@ relative  group "
   );
 }
 
-export default TopRatedMovie;
+export default SmallcardMovie;

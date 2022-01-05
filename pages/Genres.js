@@ -28,7 +28,7 @@ function Genres({ genres, tvgenres }) {
               <h2 className="text-5xl text-center mt-7 my-8 underline cursor-default font-bold text-black dark:text-stone-200">
                 Movie Genres
               </h2>
-              <div className="grid grid-cols-2 justify-center w-[90%] extrasmall:mx-[70%] lg:ml-[50%] xl:ml-[7%] mx-14 gap-x-72">
+              <div className="grid grid-cols-2 justify-center w-[90%] extrasmall:mx-[70%] lg:ml-[50%] xl:ml-[7%] mx-14 gap-x-72 ">
                 {genres?.map((genre) => (
                   <MovieGenre key={genre.id} genre={genre} />
                 ))}
