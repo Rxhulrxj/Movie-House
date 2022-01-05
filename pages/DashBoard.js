@@ -3,6 +3,7 @@ import NowPlaying from "../Components/Body/NowPlaying";
 import PopularMovie from "../Components/Body/PopularMovie";
 import SmallcardMovie from "../Components/Body/smallcardMovie";
 import UpcomingMovie from "../Components/Body/UpcomingMovie";
+import FooterSection from "../Components/Footersection/FooterSection";
 
 export default function DashBoard({
   UpcomingMovies,
@@ -74,6 +75,7 @@ export default function DashBoard({
           <SmallcardMovie key={movie.id} movie={movie} />
         ))}
       </div>
+      <FooterSection />
     </div>
   );
 }

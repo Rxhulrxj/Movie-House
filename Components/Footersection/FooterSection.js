@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 
 function FooterSection() {
   return (
-    <footer className="font-ABeeZee ">
-      <div className="border-t-2 dark:border-white border-black mt-10 bg-slate-300 dark:bg-slate-700 w-[240vw] lg:w-[211vw] xl:w-[99vw]">
+    <footer className="font-ABeeZee mt-auto absolute">
+      <div className="border-t-2 dark:border-white border-black mt-10 bg-slate-300 dark:bg-slate-700 w-[240vw] lg:w-[215vw] xl:w-[99vw]">
         <div>
           <div className="justify-center flex">
             <Image
@@ -56,7 +55,7 @@ function FooterSection() {
                 </a>
               </li>
             </ul>
-            <ul className="mr-10">
+            <ul className="mr-20">
               <li className="text-lg font-semibold underline">TMDb</li>
               <li className="mt-2 hover:underline cursor-pointer hover:text-blue-400">
                 <a

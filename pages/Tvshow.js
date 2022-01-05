@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FooterSection from "../Components/Footersection/FooterSection";
 import BannerTv from "../Components/TvBody/BannerTv";
 import MediumcardTv from "../Components/TvBody/MediumcardTv";
 import Nowplayingtv from "../Components/TvBody/NowplayingTvshow";
@@ -93,6 +94,7 @@ function Tvshow({
           </section>
         </main>
       </section>
+      <FooterSection />
     </div>
   );
 }

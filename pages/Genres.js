@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FooterSection from "../Components/Footersection/FooterSection";
 import MovieGenre from "../Components/MovieGenre";
 import TvGenre from "../Components/TvGenre";
 
@@ -49,6 +50,7 @@ function Genres({ genres, tvgenres }) {
           </section>
         </main>
       </section>
+      <FooterSection />
     </div>
   );
 }

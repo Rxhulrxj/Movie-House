@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FooterSection from "../Components/Footersection/FooterSection";
 import DashBoard from "./DashBoard";
 
 export default function Home({

@@ -20,7 +20,7 @@ function MovieSearch() {
   return (
     <div>
       <Search />
-      <section className="min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh] justify-center">
+      <section className="min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh] justify-center ">
         <div className="lg:w-[150vh] border-4 shadow-xl mt-16 flex flex-col lg:mx-96 xl:mx-60 justify-center">
           <Searchinput
             searchValue={searchvalue}
