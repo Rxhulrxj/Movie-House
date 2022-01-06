@@ -27,14 +27,14 @@ This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https:/
 - [React](https://reactjs.org)
   - Create-react-app with highly complex frontend structure
 - [Tailwind CSS](https://tailwindcss.com/)
-  -Best Modern Styling Component without leaving the HTML page.
+  - Best Modern Styling Component without leaving the HTML page.
 - [TMDB API](https://www.themoviedb.org/?language=en-US)
   - Movie service API
 
 ## Implementation Highlights
 
-    Movie-Data made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
-    Movie-Data is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
+Movie-Data made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
+Movie-Data is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
 
 ### Current Plans for Expansion
 
