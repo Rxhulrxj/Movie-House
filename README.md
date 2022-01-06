@@ -22,9 +22,6 @@ This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https:/
   - ![Desktop Movie View](https://user-images.githubusercontent.com/88202340/148400554-ed43109f-d4bf-41ad-ac97-f0bec01811a0.png)
   - ![Desktop Tv Show View](https://user-images.githubusercontent.com/88202340/148400693-61cfac78-657c-4290-88e5-b9913ae69575.png)
   - ![Desktop Search Page View](https://user-images.githubusercontent.com/88202340/148400788-79612218-bdac-4bab-a155-1f509f785f68.png)
-  - ![Mobile Movie View](https://user-images.githubusercontent.com/88202340/148400857-2ea5c2cc-9fcb-46cb-a1b3-cefe37da075b.jpg)
-  - ![Mobile Tv Show View](https://user-images.githubusercontent.com/88202340/148400916-9e723b53-8094-4803-8a3b-bad71743be9a.jpg)
-  - ![Mobile Search Page View](https://user-images.githubusercontent.com/88202340/148400969-32261d93-b13d-463e-aac4-e9dd2d6e7890.jpg)
 
 ---
 
