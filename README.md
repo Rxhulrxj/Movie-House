@@ -27,7 +27,7 @@ This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https:/
 - [React](https://reactjs.org)
   - Create-react-app with highly complex frontend structure
 - [Tailwind CSS](https://tailwindcss.com/)
-  -Best Modern Styling Component without leaving the HTML page.
+  - Best Modern Styling Component without leaving the HTML page.
 - [TMDB API](https://www.themoviedb.org/?language=en-US)
   - Movie service API
 
