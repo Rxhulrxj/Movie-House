@@ -1,27 +1,59 @@
-# Next.js + Tailwind CSS Example
+## Movie-Data
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https://github.com/facebook/create-react-app) and styled with [Tailwind CSS](https://tailwindcss.com/)
 
-## Preview
+## Quick Links
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+[Live Demo](https://movie-house-ruddy.vercel.app/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+[Demo](#Demo)
 
-## Deploy your own
+[Tech Stack](#tech-stack)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+[Author](#author)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+[License](#license)
 
-## How to use
+---
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Demo
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+- Photo Demo
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Tech Stack
+
+- [NextJs](https://nextjs.org)
+  - Create-next-app with highly complex frontend structure
+- [React](https://reactjs.org)
+  - Create-react-app with highly complex frontend structure
+- [Tailwind CSS](https://tailwindcss.com/)
+  -Best Modern Styling Component without leaving the HTML page.
+- [TMDB API](https://www.themoviedb.org/?language=en-US)
+  - Movie service API
+
+## Implementation Highlights
+
+    Movie-Data made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
+    Movie-Data is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
+
+### Current Plans for Expansion
+
+- Implementing Login features and adding profile wised recommendation.
+- Implementing More Options to the website.
+- Making website more responsive and makes more user-friendly.
+- Making the website better in performance when loading the site,especially on bad internet connection.
+- Making Changes to the website as per the suggestions requested by the End-user.
+
+---
+
+## Author
+
+- Rahul Raj N
+
+---
+
+## License
+
+- Full credit for API data to TMDB API.
+
+---
