@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FooterSection from "../../../../Components/Footersection/FooterSection";
 import TvGenreshow from "../../../../Components/TvBody/TvGenreshow";
 
 function TvGenreShow({ results }) {
@@ -37,6 +38,7 @@ function TvGenreShow({ results }) {
           ))}
         </div>
       </main>
+      <FooterSection />
     </div>
   );
 }

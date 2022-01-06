@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import RecommendMovie from "../../Components/Body/RecommendMovie";
 import SimilarMovie from "../../Components/Body/SimilarMovie";
+import FooterSection from "../../Components/Footersection/FooterSection";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
@@ -216,6 +217,7 @@ function Detail({ result, result2, similar, recommed }) {
           </div>
         </section>
       </main>
+      <FooterSection />
     </div>
   );
 }

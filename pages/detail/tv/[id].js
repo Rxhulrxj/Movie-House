@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import FooterSection from "../../../Components/Footersection/FooterSection";
 import RecommendTv from "../../../Components/TvBody/RecommendTv";
 import SimilarTv from "../../../Components/TvBody/SimilarTv";
 function Detail({ result, result2, similar, recommed }) {
@@ -227,6 +228,7 @@ function Detail({ result, result2, similar, recommed }) {
           </div>
         </section>
       </main>
+      <FooterSection />
     </div>
   );
 }

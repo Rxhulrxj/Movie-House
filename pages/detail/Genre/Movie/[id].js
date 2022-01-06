@@ -1,5 +1,6 @@
 import Head from "next/head";
 import MovieGenreShow from "../../../../Components/Body/MovieGenreShow";
+import FooterSection from "../../../../Components/Footersection/FooterSection";
 
 function MovieGenreId({ results }) {
   return (
@@ -37,6 +38,7 @@ function MovieGenreId({ results }) {
           ))}
         </div>
       </main>
+      <FooterSection />
     </div>
   );
 }
