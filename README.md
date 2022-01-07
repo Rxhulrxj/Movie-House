@@ -37,14 +37,10 @@ This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https:/
   - Movie service API
 
 ## Implementation Highlights
-<<<<<<< HEAD
 
 Movie-House made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
 Movie-House is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
 =======
- Movie-Data made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
- Movie-Data is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
->>>>>>> 85bc637c03f72e5fde22207297cbf134a179086d
 
 ### Current Plans for Expansion
 
