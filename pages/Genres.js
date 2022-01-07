@@ -23,7 +23,6 @@ function Genres({ genres, tvgenres }) {
           name="keyword"
           content="Movie,TvShows,GenreSearch,NextJs,Tailwind Css"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Rahul Raj N" />
         <meta charset="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +34,7 @@ function Genres({ genres, tvgenres }) {
       </Head>
       <section>
         <main className="font-ABeeZee">
-          <section className="">
+          <section>
             <div>
               <h2 className="text-5xl text-center mt-7 my-8 underline cursor-default font-bold text-black dark:text-stone-200">
                 Movie Genres

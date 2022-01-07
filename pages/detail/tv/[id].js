@@ -29,7 +29,6 @@ function Detail({ result, result2, similar, recommed }) {
           crossOrigin="true"
         />
         <meta name="keyword" content={result.title || result.original_name} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Rahul Raj N" />
         <meta charset="utf-8" />
         <meta name="description" content={result.tagline || result.title} />

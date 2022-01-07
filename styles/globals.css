@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent),

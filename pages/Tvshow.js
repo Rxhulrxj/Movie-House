@@ -32,7 +32,6 @@ function Tvshow({
           name="keyword"
           content="Movie,TvShows,GenreSearch,NextJs,Tailwind Css"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Rahul Raj N" />
         <meta charset="utf-8" />
         <link
@@ -53,7 +52,7 @@ function Tvshow({
       <section>
         <main className="font-ABeeZee">
           <section>
-            <div className>
+            <div>
               <BannerTv Banner={Banner} key={Banner.id} />
               <h2 className="text-4xl ml-7 mt-8">Trending this Week</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
