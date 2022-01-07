@@ -1,4 +1,4 @@
-## Movie-Data
+## Movie-House
 
 This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https://github.com/facebook/create-react-app) and styled with [Tailwind CSS](https://tailwindcss.com/)
 
@@ -33,8 +33,8 @@ This project was bootstrapped with [Nextjs](https://nextjs.org),[ react](https:/
 
 ## Implementation Highlights
 
-Movie-Data made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
-Movie-Data is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
+Movie-House made with NextJs and it shows the data on the page which are already prerendered on the server.And it is bundled with reactjs.
+Movie-House is a website which helps users to find there favourite movies without leaving the page.And gets recommendation based on the movie/Tv show user selected and users can watch them from the movie released website,the link is also provided.And users can Search their favourite movie/Tv show.
 
 ### Current Plans for Expansion
 
