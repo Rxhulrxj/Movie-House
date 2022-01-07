@@ -17,7 +17,7 @@ export default function Home({
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
       <Head>
-        <title>Movie House</title>
+        <title>Movie House-Search Your Favourite Shows</title>
         <link rel="icon" href="/movie .png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -25,6 +25,17 @@ export default function Home({
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+        <meta
+          name="description"
+          content="Movie-House is a website which helps users to find there favourite movies without leaving the page."
+        />
+        <meta
+          name="keyword"
+          content="Movie,TvShows,GenreSearch,NextJs,Tailwind Css"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Rahul Raj N" />
+        <meta charset="utf-8" />
         <link
           href="https://fonts.googleapis.com/css2?family=Righteous&family=Tajawal&display=swap"
           rel="stylesheet"
