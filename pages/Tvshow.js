@@ -42,7 +42,7 @@ function Tvshow({
       <section>
         <main className="font-ABeeZee">
           <section>
-            <div>
+            <div className>
               <BannerTv Banner={Banner} key={Banner.id} />
               <h2 className="text-4xl ml-7 mt-8">Trending this Week</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
