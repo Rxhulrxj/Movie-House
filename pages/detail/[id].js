@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import RecommendMovie from "../../Components/Body/RecommendMovie";
-import SimilarMovie from "../../Components/Body/SimilarMovie";
+import MovieCard from "../../Components/Body/MovieCard";
 import FooterSection from "../../Components/Footersection/FooterSection";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
@@ -206,13 +205,13 @@ function Detail({ result, result2, similar, recommed }) {
           <h2 className="text-4xl ml-7 mt-8 underline">Recommended Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
             {recommed?.map((movie) => (
-              <RecommendMovie key={movie.id} movie={movie} />
+              <MovieCard key={movie.id} movie={movie} />
             ))}
           </div>
           <h2 className="text-4xl ml-7 mt-8 underline">Similar Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
             {similar?.map((movie) => (
-              <SimilarMovie key={movie.id} movie={movie} />
+              <MovieCard key={movie.id} movie={movie} />
             ))}
           </div>
         </section>

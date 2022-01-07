@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import FooterSection from "../../../Components/Footersection/FooterSection";
-import RecommendTv from "../../../Components/TvBody/RecommendTv";
-import SimilarTv from "../../../Components/TvBody/SimilarTv";
+import TvCard from "../../../Components/TvBody/TvCard";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
@@ -217,13 +216,13 @@ function Detail({ result, result2, similar, recommed }) {
           <h2 className="text-4xl ml-7 mt-8 underline">Recommended Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
             {recommed?.map((tv) => (
-              <RecommendTv key={tv.id} tv={tv} />
+              <TvCard key={tv.id} tv={tv} />
             ))}
           </div>
           <h2 className="text-4xl ml-7 mt-8 underline">Similar Movies</h2>
           <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
             {similar?.map((tv) => (
-              <SimilarTv key={tv.id} tv={tv} />
+              <TvCard key={tv.id} tv={tv} />
             ))}
           </div>
         </section>

@@ -1,9 +1,7 @@
 import Head from "next/head";
 import FooterSection from "../Components/Footersection/FooterSection";
 import BannerTv from "../Components/TvBody/BannerTv";
-import MediumcardTv from "../Components/TvBody/MediumcardTv";
-import Nowplayingtv from "../Components/TvBody/NowplayingTvshow";
-import SmallcardTvshows from "../Components/TvBody/SmallcardTvshow";
+import TvCard from "../Components/TvBody/TvCard";
 
 function Tvshow({
   PopularTvshow,
@@ -49,37 +47,37 @@ function Tvshow({
               <h2 className="text-4xl ml-7 mt-8">Trending this Week</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {Trending?.map((tv) => (
-                  <Nowplayingtv key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">Popular Tvshow</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {PopularTvshow?.map((tv) => (
-                  <MediumcardTv key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">Top Rated</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {toprated?.map((tv) => (
-                  <MediumcardTv key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">Action Shows</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {action?.map((tv) => (
-                  <SmallcardTvshows key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">Comedy Shows</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {Comedy?.map((tv) => (
-                  <SmallcardTvshows key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">Documentary Shows</h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {Documentary?.map((tv) => (
-                  <SmallcardTvshows key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
               <h2 className="text-4xl ml-7 mt-8 ">
@@ -87,7 +85,7 @@ function Tvshow({
               </h2>
               <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
                 {Onair?.map((tv) => (
-                  <SmallcardTvshows key={tv.id} tv={tv} />
+                  <TvCard key={tv.id} tv={tv} />
                 ))}
               </div>
             </div>

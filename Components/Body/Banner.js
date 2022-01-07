@@ -29,11 +29,11 @@ function Banner({ trending }) {
         <h1 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
           {movie?.original_title || movie?.title}
         </h1>
-        <p className="truncate  md:text-clip text-red-600">{movie.overview}</p>
+        <p className="truncate  md:text-clip text-red-600">{movie?.overview}</p>
         <p className="text-green-600" title="Imdb Rating">
-          ⭐{movie.vote_average}/10|
+          ⭐{movie?.vote_average}/10|
           <span className="text-red-600" title="Release Date">
-            {movie.release_date}
+            {movie?.release_date}
           </span>
         </p>
       </div>
