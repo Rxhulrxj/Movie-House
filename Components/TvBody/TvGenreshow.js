@@ -16,6 +16,7 @@ function TvGenreshow({ result }) {
           objectFit="inherit"
           className="rounded-3xl "
           priority={true}
+          alt={result?.name || result?.original_name}
         />
       </div>
     </div>

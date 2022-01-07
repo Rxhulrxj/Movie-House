@@ -16,6 +16,7 @@ function SearchDetail({ result }) {
           objectFit="inherit"
           className="rounded-3xl "
           priority={true}
+          alt={result?.title || result?.original_title}
         />
       </div>
     </div>

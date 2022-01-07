@@ -17,10 +17,11 @@ function MovieCard({ movie }) {
         objectFit="contain"
         className="rounded-xl shadow-lg"
         priority={true}
+        alt={movie?.title || movie?.original_title}
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[225px] group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">
         <h2 className="text-white font-extrabold text-xl">
-          {movie.original_title || movie.title}
+          {movie?.title || movie?.original_title}
         </h2>
         <br />
         <p className="text-white">⭐{movie.vote_average}/10</p>

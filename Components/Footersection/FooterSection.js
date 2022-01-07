@@ -12,6 +12,7 @@ function FooterSection() {
               objectFit="contain"
               width={100}
               height={100}
+              alt="TMDB"
             />
           </div>
           <div className=" flex justify-center text-center">

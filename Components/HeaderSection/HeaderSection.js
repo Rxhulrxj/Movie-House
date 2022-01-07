@@ -28,7 +28,6 @@ function HeaderSection() {
     }
   };
   return (
-    // xl:min-w-[90vw] lg:min-w-[100vw] sm:min-w-[200vw] md:min-w-[160vw] extrasmall:min-w-[240vw]
     <header className="sticky py-4 font-Righteous  border-b-2 h-[100px] w-[230vw] lg:w-[211vw] xl:w-[98vw] ml-4 ove overflow-y-hidden scrollbar-hide">
       <div className="flex  space-x-3 space-y-5 sm:ml-2 md:ml-6 xl:ml-20 items-center ">
         <h1 className=" mt-4  text-red-600 animate-pulse cursor-default sm:text-3xl md:text-4xl xl:text-5xl mr-5">

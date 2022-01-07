@@ -20,6 +20,7 @@ function Banner({ trending }) {
             `${BASEURL}${movie?.backdrop_path || movie?.poster_path}` ||
             `${BASEURL}${movie?.poster_path}`
           }
+          alt={movie?.title || movie?.original_title}
           layout="fill"
           className="rounded-xl shadow-lg"
           priority={true}
@@ -27,7 +28,7 @@ function Banner({ trending }) {
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">
         <h1 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
-          {movie?.original_title || movie?.title}
+          {movie?.title || movie?.original_title}
         </h1>
         <p className="truncate  md:text-clip text-red-600">{movie?.overview}</p>
         <p className="text-green-600" title="Imdb Rating">

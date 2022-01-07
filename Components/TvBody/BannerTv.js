@@ -23,6 +23,7 @@ function BannerTv({ Banner }) {
           layout="fill"
           className="rounded-xl shadow-lg"
           priority={true}
+          alt={tvshow?.name || tvshow?.original_name}
         />
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">

@@ -15,6 +15,7 @@ function MovieGenreShow({ result }) {
           layout="fill"
           objectFit="inherit"
           className="rounded-3xl "
+          alt={result?.title || result?.original_title}
         />
       </div>
     </div>

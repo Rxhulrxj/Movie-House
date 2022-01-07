@@ -17,7 +17,7 @@ export default function Home({
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
       <Head>
-        <title>Movie House-Search Your Favourite Shows</title>
+        <title>Movie House Search Your Favourite Shows</title>
         <link rel="icon" href="/movie .png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
