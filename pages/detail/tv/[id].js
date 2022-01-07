@@ -259,6 +259,11 @@ export async function getServerSideProps(context) {
     request3.json(),
     request4.json(),
   ]);
+  if (!result1 || !result2 || !result3 || !result4) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       result: result1,

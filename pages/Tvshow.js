@@ -163,6 +163,20 @@ export async function getServerSideProps() {
     request7.json(),
     request8.json(),
   ]);
+  if (
+    !Banner ||
+    !Trending ||
+    !popular ||
+    !top_rated ||
+    !action ||
+    !Comedy ||
+    !Documentary ||
+    !onair
+  ) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       Banner: Banner.results,

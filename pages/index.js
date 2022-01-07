@@ -1,5 +1,4 @@
 import Head from "next/head";
-import FooterSection from "../Components/Footersection/FooterSection";
 import DashBoard from "./DashBoard";
 
 export default function Home({
@@ -133,6 +132,22 @@ export async function getServerSideProps() {
     request9.json(),
     request10.json(),
   ]);
+  if (
+    !banner ||
+    !upcoming ||
+    !nowplaying ||
+    !popular ||
+    !top_rated ||
+    !action ||
+    !comedy ||
+    !romance ||
+    !horror ||
+    !documentary
+  ) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       trendingdaily: banner.results,

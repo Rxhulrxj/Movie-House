@@ -79,6 +79,11 @@ export async function getServerSideProps() {
     request1.json(),
     request2.json(),
   ]);
+  if (!result1 || !result2) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       genres: result1.genres,
