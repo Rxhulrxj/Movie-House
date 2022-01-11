@@ -16,7 +16,6 @@ function MovieCard({ movie }) {
         layout="fill"
         objectFit="contain"
         className="rounded-xl shadow-lg"
-        priority={true}
         alt={movie?.title || movie?.original_title}
       />
       <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[225px] group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">

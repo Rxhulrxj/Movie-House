@@ -12,7 +12,6 @@ export default function DashBoard({
   comedy,
   romance,
   horror,
-  documentary,
 }) {
   const banner = trendingdaily;
   return (
@@ -20,56 +19,50 @@ export default function DashBoard({
       <Banner trending={banner} />
       <h2 className="text-4xl ml-7 mt-8">Now Playing</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {NowPlayingMovies?.map((movie) => (
-          <MovieCard movie={movie} />
+        {NowPlayingMovies?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Upcoming Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {UpcomingMovies?.map((movie) => (
-          <MovieCard movie={movie} />
+        {UpcomingMovies?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Popular Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {PopularMovies?.map((movie) => (
-          <MovieCard movie={movie} />
+        {PopularMovies?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Top-Rated Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {TopRatedMovies?.map((movie) => (
-          <MovieCard movie={movie} />
+        {TopRatedMovies?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Action Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {action?.map((movie) => (
-          <MovieCard movie={movie} />
+        {action?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Comedy Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {comedy?.map((movie) => (
-          <MovieCard movie={movie} />
+        {comedy?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Romantic Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {romance?.map((movie) => (
-          <MovieCard movie={movie} />
+        {romance?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <h2 className="text-4xl ml-7 mt-8 ">Horror Movies</h2>
       <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {horror?.map((movie) => (
-          <MovieCard movie={movie} />
-        ))}
-      </div>
-      <h2 className="text-4xl ml-7 mt-8 ">Documentaries</h2>
-      <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-        {documentary?.map((movie) => (
-          <MovieCard movie={movie} />
+        {horror?.map((movie, index) => (
+          <MovieCard movie={movie} key={index} />
         ))}
       </div>
       <FooterSection />

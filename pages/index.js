@@ -11,7 +11,6 @@ export default function Home({
   comedy,
   romance,
   horror,
-  documentary,
 }) {
   return (
     <div className="p-0 flex flex-col box-border m-0 ">
@@ -60,7 +59,6 @@ export default function Home({
           comedy={comedy}
           romance={romance}
           horror={horror}
-          documentary={documentary}
         />
       </main>
     </div>
@@ -77,7 +75,6 @@ export async function getServerSideProps() {
     request7,
     request8,
     request9,
-    request10,
   ] = await Promise.all([
     fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.API_KEY}`
@@ -105,9 +102,6 @@ export async function getServerSideProps() {
     fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=27`
     ),
-    fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=99&include_adult=false`
-    ),
   ]);
   const [
     banner,
@@ -130,7 +124,6 @@ export async function getServerSideProps() {
     request7.json(),
     request8.json(),
     request9.json(),
-    request10.json(),
   ]);
   if (
     !banner ||
@@ -141,8 +134,7 @@ export async function getServerSideProps() {
     !action ||
     !comedy ||
     !romance ||
-    !horror ||
-    !documentary
+    !horror
   ) {
     return {
       notFound: true,
@@ -159,7 +151,6 @@ export async function getServerSideProps() {
       comedy: comedy.results,
       romance: romance.results,
       horror: horror.results,
-      documentary: documentary.results,
     },
   };
 }
