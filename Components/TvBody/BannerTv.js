@@ -27,9 +27,9 @@ function BannerTv({ Banner }) {
         />
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">
-        <h1 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
+        <h2 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
           {tvshow?.name || tvshow?.original_name}
-        </h1>
+        </h2>
         <p className="truncate  md:text-clip text-red-600">
           {tvshow?.overview}
         </p>
