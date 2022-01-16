@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Castdetails from "../../Components/Body/castdetails";
 import MovieCard from "../../Components/Body/MovieCard";
 import FooterSection from "../../Components/Footersection/FooterSection";
 function Detail({ result, result2, similar, recommed }) {
@@ -7,6 +8,13 @@ function Detail({ result, result2, similar, recommed }) {
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
+  let actor = [];
+  for (const element of result2.cast) {
+    if (element.known_for_department === "Acting") {
+      actor.push(element);
+    }
+  }
+  let slicedactor = actor.slice(0, 20);
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -48,17 +56,18 @@ function Detail({ result, result2, similar, recommed }) {
         />
         <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
       </Head>
-      <main className="font-ABeeZee">
+      <main className="font-ABeeZee cursor-default ">
         <section>
-          <div className="relative min-h-[calc(97vh-100px)] xl:min-w-[99vw] lg:min-w-[211vw] sm:min-w-[200vw] md:min-w-[240vw] extrasmall:min-w-[240vw]">
+          <div className="relative min-h-[calc(97vh-100px)] xl:min-w-[99vw] xl:h-[100vh] lg:min-w-[211vw] lg:h-[190vh] sm:min-w-[200vw] md:min-w-[240vw] extrasmall:min-w-[240vw]">
             <Image
               src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
               layout="fill"
               objectFit="cover"
               alt={result?.title || result?.original_name}
+              priority={true}
             />
           </div>
-          <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
+          <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] lg:inset-y-[180%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
             <h2 className="text-5xl font-bold">{result.title}</h2>
             <p className="text-3xl">{result.tagline}</p>
           </div>
@@ -79,7 +88,6 @@ function Detail({ result, result2, similar, recommed }) {
                 width="580"
                 height="380"
                 src={`https://www.youtube-nocookie.com/embed/${result.videos?.results[index]?.key}?controls=1`}
-                title="YouTube Trailer player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope ; picture-in-picture; fullscreen"
                 allowFullScreen
@@ -205,9 +213,19 @@ function Detail({ result, result2, similar, recommed }) {
             </div>
           </div>
         </section>
+        <section className="lg:-mt-[25%] xl:-mt-[10%]">
+          <h2 className=" underline ml-7 text-4xl mt-8 cursor-default ">
+            Cast
+          </h2>
+          <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh] mt-7">
+            {slicedactor?.map((cast) => (
+              <Castdetails key={cast.id} cast={cast} />
+            ))}
+          </div>
+        </section>
         <section>
           <h2 className="text-4xl ml-7 mt-8 underline">Recommended Movies</h2>
-          <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
+          <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh] mt-7">
             {recommed?.map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}

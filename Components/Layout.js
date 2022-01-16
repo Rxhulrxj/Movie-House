@@ -1,4 +1,3 @@
-import FooterSection from "./Footersection/FooterSection";
 import HeaderSection from "./HeaderSection/HeaderSection";
 
 function Layout({ children }) {

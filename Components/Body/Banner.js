@@ -26,7 +26,7 @@ function Banner({ trending }) {
           priority={true}
         />
       </div>
-      <div className="absolute top-[60%] right-12 left-7 cursor-default hover:bg-black/70 hover:rounded-xl">
+      <div className="absolute top-[60%] right-12 left-7 cursor-default hover:backdrop-blur-md hover:rounded-xl">
         <h2 className="text-4xl text-emerald-500 hover:animate-bounce hover:text-blue-600 transition transform duration-150">
           {movie?.title || movie?.original_title}
         </h2>
