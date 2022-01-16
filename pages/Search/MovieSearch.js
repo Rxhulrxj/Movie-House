@@ -26,14 +26,6 @@ function MovieSearch() {
             searchValue={searchvalue}
             setSearchValue={setSearchvalue}
           />
-          {/* <div className="flex items-center justify-center">
-              <button
-                // onClick={handleClick}
-                className="bg-green-500 text-black w-[500px] h-[40px] rounded-lg active:scale-x-110 transition transform duration-300"
-              >
-                Submit
-              </button>
-            </div> */}
         </div>
       </section>
       <section className="mt-20 font-ABeeZee">
