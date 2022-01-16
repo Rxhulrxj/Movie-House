@@ -51,7 +51,7 @@ function Detail({ result, result2, similar, recommed }) {
       <main className="font-ABeeZee">
         <div className="xl:min-w-full lg:min-w-[210vw] min-w-[230vw]">
           <section>
-            <div className=" relative min-h-[calc(97vh-100px)] xl:min-w-[99vw] lg:min-w-[211vw] sm:min-w-[200vw] md:min-w-[240vw] extrasmall:min-w-[240vw]">
+            <div className=" relative min-h-[calc(97vh-100px)] xl:min-w-[98vw] lg:min-w-[211vw] sm:min-w-[200vw] md:min-w-[230vw] extrasmall:min-w-[240vw]">
               <Image
                 src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
                 layout="fill"
@@ -177,7 +177,7 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="mx-16 min-w-[200vw] lg:min-w-[200vw] xl:min-w-0 mt-10 lg:-mt-[50%] xl:-mt-[25%]">
+          <section className="mx-16 min-w-[200vw] lg:min-w-[200vw] xl:min-w-0 mt-10 lg:-mt-[20%] xl:-mt-[25%]">
             <div className="grid grid-rows-3 lg:grid-cols-3 justify-items-center">
               <div className="text-center justify-items-center">
                 {genres && genres.length > 0 ? (
@@ -222,7 +222,7 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="lg:-mt-[25%] xl:-mt-[10%]">
+          <section className="lg:-mt-[10%]  xl:-mt-[15%]">
             <h2 className="text-4xl ml-7 mt-8 underline">Recommended Shows</h2>
             <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  mt-10">
               {recommed?.map((tv) => (

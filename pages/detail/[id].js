@@ -174,7 +174,7 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="mx-16 min-w-[200vw] lg:min-w-[200vw] xl:min-w-0 mt-10 lg:-mt-[50%] xl:-mt-[25%]">
+          <section className="mx-16 min-w-[200vw] lg:min-w-[200vw] xl:min-w-0 mt-10 lg:-mt-[20%] xl:-mt-[25%]">
             <div className="grid grid-rows-3 lg:grid-cols-3 justify-items-center">
               <div className="text-center justify-items-center">
                 {genres && genres.length > 0 ? (
@@ -219,7 +219,7 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="lg:-mt-[25%] xl:-mt-[10%]">
+          <section className="lg:-mt-[10%]  xl:-mt-[15%]">
             <h2 className=" underline ml-7 text-4xl mt-8 cursor-default ">
               Cast
             </h2>

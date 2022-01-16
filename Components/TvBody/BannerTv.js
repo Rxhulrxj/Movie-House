@@ -14,7 +14,7 @@ function BannerTv({ Banner }) {
       className="flex flex-col mt-4"
       onClick={() => router.push(`/detail/tv/${tvshow.id}`)}
     >
-      <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw] md:w-[90vw] lg:w-[90vw] ml-4 ">
+      <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw]  lg:w-[90vw] ml-4 ">
         <Image
           src={
             `${BASEURL}${tvshow?.backdrop_path || tvshow?.poster_path}` ||

@@ -14,7 +14,7 @@ function Banner({ trending }) {
       className="flex flex-col mt-4"
       onClick={() => router.push(`/detail/${movie.id}`)}
     >
-      <div className=" relative xl:min-w-[97vw]  w-[230vw] h-[70vh] md:min-w-[210vw] md:w-[90vw] lg:w-[90vw] ml-4 ">
+      <div className=" relative xl:min-w-[97vw] w-[230vw] h-[70vh] md:min-w-[210vw]  lg:w-[90vw] ml-4 ">
         <Image
           src={
             `${BASEURL}${movie?.backdrop_path || movie?.poster_path}` ||
