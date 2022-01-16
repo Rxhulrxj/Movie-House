@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Castdetails from "../../../Components/Body/castdetails";
 import FooterSection from "../../../Components/Footersection/FooterSection";
 import TvCard from "../../../Components/TvBody/TvCard";
 function Detail({ result, result2, similar, recommed }) {
@@ -7,14 +8,14 @@ function Detail({ result, result2, similar, recommed }) {
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-  });
-  const hours = Math.floor(result.runtime / 60);
-  const minutes = result.runtime % 60;
-  const runtime = `${hours}h ${minutes}m`;
+  let actor = [];
+  for (const element of result2.cast) {
+    if (element.known_for_department === "Acting") {
+      actor.push(element);
+    }
+  }
+  let slicedactor = actor.slice(0, 20);
+
   const genres = result.genres;
   const companies = result.production_companies;
   return (
@@ -222,7 +223,17 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="lg:-mt-[10%]  xl:-mt-[15%]">
+          <section className="lg:-mt-[10%]  xl:-mt-[10%]">
+            <h2 className=" underline ml-7 text-4xl mt-8 cursor-default ">
+              Cast
+            </h2>
+            <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  mt-7">
+              {slicedactor?.map((cast) => (
+                <Castdetails key={cast.id} cast={cast} />
+              ))}
+            </div>
+          </section>
+          <section>
             <h2 className="text-4xl ml-7 mt-8 underline">Recommended Shows</h2>
             <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  mt-10">
               {recommed?.map((tv) => (

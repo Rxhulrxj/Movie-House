@@ -219,7 +219,7 @@ function Detail({ result, result2, similar, recommed }) {
               </div>
             </div>
           </section>
-          <section className="lg:-mt-[10%]  xl:-mt-[15%]">
+          <section className="lg:-mt-[10%]  xl:-mt-[10%]">
             <h2 className=" underline ml-7 text-4xl mt-8 cursor-default ">
               Cast
             </h2>
