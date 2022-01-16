@@ -18,12 +18,14 @@ function TvCard({ tv }) {
         className="rounded-xl shadow-lg"
         alt={tv?.name || tv?.original_name}
       />
-      <div className="hidden group-hover:block group-hover:absolute group-hover:mt-[225px] group-hover:ml-0 group-hover:bg-zinc-900 w-[100%]">
-        <h2 className="text-white font-extrabold text-xl">
-          {tv.name || tv.original_name}
-        </h2>
-        <br />
-        <p className="text-white">⭐{tv.vote_average}/10</p>
+      <div className="hidden group-hover:block group-hover:absolute  group-hover:ml-0 group-hover:backdrop-blur-xl w-[100%] h-[100%] justify-center text-center">
+        <div className="mt-[50%]">
+          <h2 className="text-white font-extrabold text-xl">
+            {tv.name || tv.original_name}
+          </h2>
+          <br />
+          <p className="text-white">⭐{tv.vote_average}/10</p>
+        </div>
       </div>
     </div>
   );

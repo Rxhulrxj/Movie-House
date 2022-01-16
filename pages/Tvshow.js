@@ -51,55 +51,57 @@ function Tvshow({
       </Head>
       <section>
         <main className="font-ABeeZee">
-          <section>
-            <div>
-              <BannerTv Banner={Banner} key={Banner.id} />
-              <h2 className="text-4xl ml-7 mt-8">Trending this Week</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {Trending?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
+          <div className="xl:min-w-full lg:min-w-[210vw] min-w-[230vw]">
+            <section>
+              <div>
+                <BannerTv Banner={Banner} key={Banner.id} />
+                <h2 className="text-4xl ml-7 mt-8">Trending this Week</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2  ">
+                  {Trending?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">Popular Tvshow</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {PopularTvshow?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">Top Rated</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {toprated?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">Action Shows</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {action?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">Comedy Shows</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {Comedy?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">Documentary Shows</h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {Documentary?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
+                <h2 className="text-4xl ml-7 mt-8 ">
+                  More Show You Will Love To Watch
+                </h2>
+                <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 ">
+                  {Onair?.map((tv) => (
+                    <TvCard key={tv.id} tv={tv} />
+                  ))}
+                </div>
               </div>
-              <h2 className="text-4xl ml-7 mt-8 ">Popular Tvshow</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {PopularTvshow?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-              <h2 className="text-4xl ml-7 mt-8 ">Top Rated</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {toprated?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-              <h2 className="text-4xl ml-7 mt-8 ">Action Shows</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {action?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-              <h2 className="text-4xl ml-7 mt-8 ">Comedy Shows</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {Comedy?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-              <h2 className="text-4xl ml-7 mt-8 ">Documentary Shows</h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {Documentary?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-              <h2 className="text-4xl ml-7 mt-8 ">
-                More Show You Will Love To Watch
-              </h2>
-              <div className="flex space-x-6 overflow-y-hidden overflow-x-scroll scrollbar-hide p-2 min-w-[240vw] lg:min-w-[210vw] xl:min-w-[201vh]">
-                {Onair?.map((tv) => (
-                  <TvCard key={tv.id} tv={tv} />
-                ))}
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </main>
       </section>
       <FooterSection />

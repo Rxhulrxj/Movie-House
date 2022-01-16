@@ -3,7 +3,7 @@ import Image from "next/image";
 function FooterSection() {
   return (
     <footer className="font-ABeeZee mt-auto">
-      <div className="border-t-2 dark:border-white border-black mt-10 bg-slate-300 dark:bg-slate-700 w-[240vw] lg:w-[211vw] xl:w-[99vw]">
+      <div className="border-t-2 dark:border-white border-black mt-10 bg-slate-300 dark:bg-slate-700 xl:min-w-full lg:min-w-[215vw] min-w-[240vw] ">
         <div>
           <div className="justify-center flex">
             <Image
