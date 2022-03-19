@@ -24,7 +24,7 @@ function TvCard({ tv }) {
             {tv.name || tv.original_name}
           </h2>
           <br />
-          <p className="text-white">⭐{tv.vote_average}/10</p>
+          <p className="text-white">⭐{tv.vote_average.toFixed(1)}/10</p>
         </div>
       </div>
     </div>

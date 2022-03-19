@@ -24,7 +24,7 @@ function MovieCard({ movie }) {
             {movie?.title || movie?.original_title}
           </h2>
           <br />
-          <p className="text-white">⭐{movie.vote_average}/10</p>
+          <p className="text-white">⭐{movie.vote_average.toFixed(1)}/10</p>
         </div>
       </div>
     </div>
