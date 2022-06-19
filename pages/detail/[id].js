@@ -73,6 +73,7 @@ function Detail({ result, result2, similar, recommed }) {
     }
   };
   useEffect(() => {
+    window.location.reload();
     if (document.readyState === "complete") {
       onPageLoad();
     } else {
