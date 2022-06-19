@@ -23,7 +23,7 @@ function Banner({ trending }) {
           alt={movie?.title || movie?.original_title}
           layout="fill"
           className="rounded-xl shadow-lg"
-          priority={true}
+          loading="eager"
         />
       </div>
       <div className="absolute top-[60%] right-12 left-7 cursor-default hover:backdrop-blur-md hover:rounded-xl">

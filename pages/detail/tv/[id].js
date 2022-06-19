@@ -6,7 +6,7 @@ import TvCard from "../../../Components/TvBody/TvCard";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const index = result.videos.results.findIndex(
-    (element) => element.type === "Trailer"
+    (element) => element.type === "Trailer" && element.offical === "true"
   );
   let actor = [];
   for (const element of result2.cast) {
@@ -18,6 +18,7 @@ function Detail({ result, result2, similar, recommed }) {
 
   const genres = result.genres;
   const companies = result.production_companies;
+  console.log(result.videos);
   return (
     <div>
       <Head>
@@ -56,8 +57,8 @@ function Detail({ result, result2, similar, recommed }) {
               <Image
                 src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
                 layout="fill"
-                priority={true}
                 alt={result.title || result.original_name}
+                loading="eager"
               />
             </div>
             <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
@@ -88,8 +89,7 @@ function Detail({ result, result2, similar, recommed }) {
                 <iframe
                   width="580"
                   height="380"
-                  src={`https://www.youtube-nocookie.com/embed/${result.videos?.results[index]?.key}?controls=1`}
-                  title="YouTube Trailer player"
+                  src={`https://www.youtube.com/embed/${result.videos?.results[index]?.key}?controls=1`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope ; picture-in-picture; fullscreen"
                   allowFullScreen

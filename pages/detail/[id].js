@@ -1,13 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Castdetails from "../../Components/Body/castdetails";
 import MovieCard from "../../Components/Body/MovieCard";
 import FooterSection from "../../Components/Footersection/FooterSection";
+import YouTube from "react-youtube";
 function Detail({ result, result2, similar, recommed }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const [show, setShow] = useState(false);
   const index = result.videos.results.findIndex(
-    (element) => element.type === "Trailer"
+    (element) => element.type == "Trailer" && element.offical == "true"
   );
+  let trailerkey = [];
+  for (var item in result.videos.results) {
+    if (
+      result.videos.results[item].type == "Trailer" ||
+      result.videos.results[item].type == "trailer"
+    ) {
+      if (
+        result.videos.results[item].official == "true" ||
+        result.videos.results[item].official == true
+      ) {
+        var trailer = result.videos.results[item].key;
+        trailerkey.push(trailer);
+      }
+    }
+  }
   let actor = [];
   for (const element of result2.cast) {
     if (element.known_for_department === "Acting") {
@@ -25,6 +43,45 @@ function Detail({ result, result2, similar, recommed }) {
   const runtime = `${hours}h ${minutes}m`;
   const genres = result.genres;
   const companies = result.production_companies;
+
+  const checkElapsedTime = (e) => {
+    console.log(e.target.playerInfo.playerState);
+    if (e.target.playerInfo.playerState == 0) {
+      setShow(false);
+    }
+  };
+
+  const opts = {
+    height: "100%",
+    width: "100%",
+    aspectRatio: "16:9",
+    playerVars: {
+      autoplay: 1,
+      rel: 0,
+      modestbranding: 1,
+      cc_load_policy: 1,
+    },
+  };
+  const cusstyle = {
+    height: "100%",
+  };
+  const onPageLoad = () => {
+    if (show == false) {
+      setTimeout(() => {
+        setShow(true);
+      }, 5000);
+    }
+  };
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
+
   return (
     <div>
       <Head>
@@ -60,18 +117,34 @@ function Detail({ result, result2, similar, recommed }) {
         <div className="xl:min-w-full lg:min-w-[210vw] min-w-[230vw]">
           <section>
             <div className="relative min-h-[calc(97vh-100px)] xl:min-w-[99vw] xl:h-[100vh] lg:min-w-[211vw] lg:h-[190vh] sm:min-w-[200vw] md:min-w-[240vw] extrasmall:min-w-[240vw]">
-              <Image
-                src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
-                layout="fill"
-                objectFit="inherit"
-                alt={result?.title || result?.original_name}
-                priority={true}
-              />
+              {show == false ? (
+                <Image
+                  src={`${BASE_URL}${
+                    result.backdrop_path || result.poster_path
+                  }`}
+                  layout="fill"
+                  objectFit="inherit"
+                  alt={result?.title || result?.original_name}
+                  loading="eager"
+                />
+              ) : (
+                <YouTube
+                  videoId={trailerkey[0]}
+                  containerClassName="embed embed-youtube"
+                  onStateChange={(e) => checkElapsedTime(e)}
+                  opts={opts}
+                  style={cusstyle}
+                  onEnd={() => setShow(false)}
+                  onError={() => setShow(false)}
+                />
+              )}
             </div>
-            <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] lg:inset-y-[180%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
-              <h2 className="text-5xl font-bold">{result.title}</h2>
-              <p className="text-3xl">{result.tagline}</p>
-            </div>
+            {show == false ? (
+              <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] lg:inset-y-[180%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">
+                <h2 className="text-5xl font-bold">{result.title}</h2>
+                <p className="text-3xl">{result.tagline}</p>
+              </div>
+            ) : null}
           </section>
           <section className="mx-16 min-w-[200vw] lg:min-w-[200vw] xl:min-w-0 mt-10">
             <div>
@@ -90,9 +163,9 @@ function Detail({ result, result2, similar, recommed }) {
                 <iframe
                   width="580"
                   height="380"
-                  src={`https://www.youtube-nocookie.com/embed/${result.videos?.results[index]?.key}?controls=1`}
+                  src={`https://www.youtube.com/embed/${trailerkey[0]}?controls=1`}
                   frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope ; picture-in-picture; fullscreen"
+                  allow="autoplay;gyroscope ; fullscreen"
                   allowFullScreen
                 />
               </div>
@@ -127,7 +200,9 @@ function Detail({ result, result2, similar, recommed }) {
                 </h3>
                 <h5 className="text-center mt-2 text-black">Budget</h5>
                 <p className=" mt-2 text-center text-black font-semibold">
-                  {formatter.format(`${result.budget}`)}
+                  {result.budget && result.budget > 0
+                    ? formatter.format(`${result.budget}`)
+                    : "N/A"}
                 </p>
               </div>
               <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">
@@ -155,7 +230,9 @@ function Detail({ result, result2, similar, recommed }) {
                 </h3>
                 <h5 className="text-center mt-2 text-black">Revenue</h5>
                 <p className=" mt-2 text-center font-semibold text-black">
-                  {formatter.format(`${result.revenue}`)}
+                  {result.revenue && result.revenue > 0
+                    ? formatter.format(`${result.revenue}`)
+                    : "N/A"}
                 </p>
               </div>
               <div className="border rounded-xl bg-slate-400 dark:bg-slate-200 shadow-xl w-[150px] h-[150px] mt-16">

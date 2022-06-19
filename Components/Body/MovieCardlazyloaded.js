@@ -16,6 +16,7 @@ function Moviecards({ movie }) {
         objectFit="contain"
         className="rounded-xl shadow-lg"
         alt={movie?.title || movie?.original_title}
+        loading="eager"
       />
       <div className="hidden group-hover:block group-hover:absolute  group-hover:ml-0 group-hover:backdrop-blur-xl w-[100%] h-[100%] justify-center text-center">
         <div className="mt-[50%]">
