@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 function TvCard({ tv }) {
   const router = useRouter();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
@@ -11,13 +12,19 @@ function TvCard({ tv }) {
       relative w-[300px] h-[170px] group "
       onClick={() => router.push(`/detail/tv/${tv.id}`)}
     >
-      <Image
+      <LazyLoadImage
+        alt={tv?.name || tv?.original_name}
+        src={`${BASE_URL}${tv.poster_path}`}
+        className="rounded-xl shadow-lg"
+        effect="blur"
+      />
+      {/* <Image
         src={`${BASE_URL}${tv.poster_path}`}
         layout="fill"
         objectFit="conatin"
         className="rounded-xl shadow-lg"
         alt={tv?.name || tv?.original_name}
-      />
+      /> */}
       <div className="hidden group-hover:block group-hover:absolute  group-hover:ml-0 group-hover:backdrop-blur-xl w-[100%] h-[100%] justify-center text-center">
         <div className="mt-[50%]">
           <h2 className="text-white font-extrabold text-xl">

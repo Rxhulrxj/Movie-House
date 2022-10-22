@@ -126,7 +126,7 @@ function Detail({ result, result2, similar, recommed }) {
                   layout="fill"
                   objectFit="inherit"
                   alt={result?.title || result?.original_name}
-                  loading="eager"
+                  loading="lazy"
                 />
               ) : (
                 <YouTube

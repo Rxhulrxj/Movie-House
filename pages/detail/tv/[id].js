@@ -58,7 +58,6 @@ function Detail({ result, result2, similar, recommed }) {
                 src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
                 layout="fill"
                 alt={result.title || result.original_name}
-                loading="eager"
               />
             </div>
             <div className="absolute text-center inset-y-[83%] extrasmall:inset-y-[75%] xl:inset-y-[88%] left-[40vw] xl:min-w-[70vw] lg:min-w-[180vw] sm:min-w-[180vw] md:min-w-[190vw] extrasmall:min-w-[200vw] extrasmall:left-[15vw] dark:text-white text-white">

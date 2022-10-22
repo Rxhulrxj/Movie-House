@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 function Castdetails({ cast }) {
   //   const router = useRouter();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
@@ -12,13 +14,19 @@ function Castdetails({ cast }) {
       border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 ml-7 
       relative w-[300px] h-[170px] group "
     >
-      <Image
+      <LazyLoadImage
+        alt={cast.name}
+        src={cast.profile_path ? profile_path : `${noprofile}`}
+        className="rounded-xl shadow-lg"
+        effect="blur"
+      />
+      {/* <Image
         src={cast.profile_path ? profile_path : `${noprofile}`}
         layout="fill"
         objectFit="contain"
         className="rounded-xl shadow-lg"
         alt={cast.name}
-      />
+      /> */}
       <div className="hidden group-hover:block group-hover:absolute group-hover:ml-0 group-hover:backdrop-blur-sm w-[100%] h-[100%] justify-center text-center">
         <div className="mt-[50%]">
           <h2 className="text-white font-extrabold text-xl">{cast.name}</h2>

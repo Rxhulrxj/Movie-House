@@ -10,13 +10,19 @@ function MovieGenreShow({ result }) {
         className="relative xl:w-[25rem] h-[23rem] extrasmall:w-[35rem] extrasmall:h-[35rem] shadow-lg hover:scale-110 transition transform duration-300 ease-in-out hover:shadow-2xl cursor-pointer"
         onClick={() => router.push(`/detail/${result.id}`)}
       >
-        <Image
+        <LazyLoadImage
+          alt={result?.title || result?.original_title}
+          src={`${BASE_URL}${result.poster_path}`}
+          className="rounded-3xl "
+          effect="blur"
+        />
+        {/* <Image
           src={`${BASE_URL}${result.poster_path}`}
           layout="fill"
           objectFit="inherit"
           className="rounded-3xl "
           alt={result?.title || result?.original_title}
-        />
+        /> */}
       </div>
     </div>
   );
